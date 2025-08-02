@@ -41,14 +41,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-
   min-height: 100vh;
-  display: grid;
-  place-items: center;
+
   font-family: 'Outfit', sans-serif;
   background-color: var(--light-gray);
   font-size: var(--body-font-size);
-  padding: 1rem
+}
+
+.wrapper {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
 }
 
 img, picture, video, canvas, svg {
@@ -65,7 +68,8 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .card {
-  max-width: calc(320 / 16 * 1rem);
+  max-width: 90vw; /* Max width is 90% of viewport width, flexible */
+  max-width: min(20rem, 90vw);
   background-color: var(--white);
   border-radius: 18px;
   padding: 1rem;
@@ -78,7 +82,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .content-wrapper {
-  padding: 0 12px;
+  padding: 0 calc(12 / 16 * 1rem);
 }
 
 h1 {
@@ -88,7 +92,7 @@ h1 {
   margin-block-start: calc(24 / 16 * 1rem);
   margin-block-end: calc(16 / 16 * 1rem);
   color: var(--dark-blue);
-  word-wrap: balanced;
+  text-wrap: balance;
 }
 
 p {
